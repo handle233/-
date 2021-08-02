@@ -115,6 +115,7 @@ void WindowProcess::MouseUpProc(UINT MouseMessage){
 	pConKey->Down = false;
 }
 bool WindowProcess::WindowMessageFilter(HWND hwnd, UINT msg, WPARAM wpm, LPARAM lpm){
+	this->hwnd = hwnd;
 	switch (msg) {
 	case WM_KEYDOWN:
 		KeyDownProc(wpm, lpm);
@@ -176,6 +177,16 @@ int WindowProcess::IsRoll()
 		return 1;
 	}
 	return 0;
+}
+Point WindowProcess::GetMousePos()
+{
+	if (hwnd == nullptr) {
+		throw Exception(EXPT_ERROR, "在使用WindowProcess GetMousePos时，hwnd未初始化");
+	}
+	POINT Pt;
+	GetCursorPos(&Pt);
+	ScreenToClient(hwnd, &Pt);
+	return Pt;
 }
 void nullproc(){ }
 
@@ -286,8 +297,8 @@ void Screen::ReFormatBitmap(::Bitmap& Picture, int NewWidth, int NewHeight)
 	SelectObject(Memory.dc, hTemp);
 	Memory.Bitmap = hTemp;
 
-	Picture.Width = NewWidth;
-	Picture.Height = NewHeight;
+	Picture.OriX = NewWidth;
+	Picture.OriY = NewHeight;
 }
 void Screen::operator+(::Bitmap& Picture)
 {
@@ -297,20 +308,20 @@ void Screen::operator+(::Bitmap& Picture)
 	}
 	else if(Picture.Transrgb != -1 && Picture.Alpha == 255) {
 		TransparentBlt(dc, Picture.x, Picture.y, Picture.Width, Picture.Height,
-			Select.dc, 0, 0, Picture.Width, Picture.Height, Picture.Transrgb);
+			Select.dc, 0, 0, Picture.OriginWidth, Picture.OriginHeight, Picture.Transrgb);
 	}
 	else if (Picture.Transrgb == -1 && Picture.Alpha != 255) {
 		BLENDFUNCTION bf = { 0 };
 		bf.BlendOp = AC_SRC_OVER;
 		bf.SourceConstantAlpha = Picture.Alpha;
-		AlphaBlend(dc, 0, 0, rect.right, rect.bottom,
-			Select.dc, 0, 0, rect.right, rect.bottom, bf);
+		AlphaBlend(dc, 0, 0, Picture.Width, Picture.Height,
+			Select.dc, 0, 0, Picture.OriginWidth, Picture.OriginHeight, bf);
 	}
 	else if (Picture.Transrgb != -1 && Picture.Alpha != 255) {
 		Screen Mem(*this);
 		Mem << *this;
 		TransparentBlt(Mem.dc, Picture.x, Picture.y, Picture.Width, Picture.Height,
-			Select.dc, 0, 0, Picture.Width, Picture.Height, Picture.Transrgb);
+			Select.dc, 0, 0, Picture.OriginWidth, Picture.OriginHeight, Picture.Transrgb);
 		BLENDFUNCTION bf = { 0 };
 		bf.BlendOp = AC_SRC_OVER;
 		bf.SourceConstantAlpha = Picture.Alpha;
@@ -349,6 +360,8 @@ Bitmap::Bitmap(const TCHAR* sFile)
 	BITMAP hInfo = { 0 };
 	GetObject(Photo, sizeof(BITMAP), &hInfo);
 
+	OriX = hInfo.bmWidth;
+	OriY = hInfo.bmHeight;
 	Width = hInfo.bmWidth;
 	Height = hInfo.bmHeight;
 }

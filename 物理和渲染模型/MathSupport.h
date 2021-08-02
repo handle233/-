@@ -125,7 +125,8 @@ public:
 	Rect(Figure x, Figure y,Figure Width,Figure Height);
 	Rect(Vector& Vec);
 	Rect(Point Pt, Vector Vec);
-	bool operator ||(Line &L);
+	bool operator ==(Point& Pt);
+	bool operator ||(Line& L);
 	bool operator &&(Rect& Rect);
 	//windows SUPPORT
 	Rect(RECT rect);

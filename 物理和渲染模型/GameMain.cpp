@@ -24,6 +24,11 @@ try {
 	Mem = new Screen(*Root);
 	Master = new Manager;
 
+	MainScreen* pF = new MainScreen;
+	Master->AddMod(pF);
+	Master->AddRunMod(Master->SeekMod(1));
+	Master->AddTimeMod(Master->SeekMod(1));
+
 	Ball = new Bitmap(TEXT("B.bmp"));
 	Ball->Transrgb = RGB(255, 255, 255);
 
@@ -46,26 +51,29 @@ Timer KeyTmr(1000 / 24);
 void MainFunction()
 try {
 
+	Mem->Clear(RGB(255, 255, 255));
 	Master->Run();
-	Mem->Clear(RGB(230, 230, 230));
-	Ball->x = A->pt.x - A->Size.x / 2;
-	Ball->y = (-A->pt.y) - A->Size.y / 2;
-	*Mem + *Ball;
-	Ball->x = B->pt.x - B->Size.x / 2;
-	Ball->y = (-B->pt.y) - B->Size.y / 2;
-	*Mem + *Ball;
-
-	GraphObject Obj(*Mem);
-	SetPixel(Obj.dc, A->pt.x, -A->pt.y, RGB(255, 0, 0));
-	SetPixel(Obj.dc, B->pt.x, -B->pt.y, RGB(255, 0, 0));
-
-	if (Tmr) {
-		Phy.PhysicsSpin();
-	}
-
 	*Root << *Mem;
 
-	if(KeyTmr){
+
+	//Mem->Clear(RGB(230, 230, 230));
+	//Ball->x = A->pt.x - A->Size.x / 2;
+	//Ball->y = (-A->pt.y) - A->Size.y / 2;
+	//*Mem + *Ball;
+	//Ball->x = B->pt.x - B->Size.x / 2;
+	//Ball->y = (-B->pt.y) - B->Size.y / 2;
+	//*Mem + *Ball;
+
+	//GraphObject Obj(*Mem);
+	//SetPixel(Obj.dc, A->pt.x, -A->pt.y, RGB(255, 0, 0));
+	//SetPixel(Obj.dc, B->pt.x, -B->pt.y, RGB(255, 0, 0));
+
+	if (Tmr) {
+	//	Phy.PhysicsSpin();
+	}
+
+
+	if(KeyTmr&&false){//Debug
 		const double Delta = 20.0;
 		if (Processor.IsKeyDown('W')) {
 			A->Speed.y += Delta;

@@ -51,6 +51,7 @@ public:
 
 class WindowProcess {
 private:
+	HWND hwnd;
 	struct sKeyState {
 		bool Down;
 		bool Hit;
@@ -63,6 +64,7 @@ private:
 	void MouseUpProc(UINT MouseMessage);
 public:
 	WindowProcess() {
+		hwnd = NULL;
 		memset(Keys, 0, sizeof(sKeyState) * 255);
 		memset(&LeftButton, 0, sizeof(sKeyState));
 		memset(&RightButton, 0, sizeof(sKeyState));
@@ -79,6 +81,8 @@ public:
 	bool IsButtonDown(bool IsRight = false);
 	/*鼠标滚轮侦测*/
 	int IsRoll();
+	/*获取鼠标位置*/
+	Point GetMousePos();
 };
 
 class Text;
@@ -120,7 +124,11 @@ public:
 	~Text();
 };
 class Bitmap{
+	friend class Screen;
+private:
+	int OriX, OriY;
 public:
+	const int& OriginWidth = OriX, & OriginHeight = OriY;
 	int x,y,Width, Height;
 	int Transrgb;
 	BYTE Alpha;

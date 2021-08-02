@@ -60,14 +60,16 @@ void Physics::Colli(Object& a, Object& b)
 	}
 	Point DeltaPt = (a.pt - b.pt);
 	Vector DeltaVA(DeltaPt.x,DeltaPt.y);
-	DeltaVA = DeltaVA / DeltaVA.abs();
+	if (DeltaVA.abs() != Figure(0)) {
+		DeltaVA = DeltaVA / DeltaVA.abs();
+	}
 
 	double BorderWidth = sqrt(Figure(abs(a.Size.x / 2 + b.Size.x / 2)).Square() +
 		Figure(abs(a.Size.y / 2 + b.Size.y / 2)).Square());
 
 	double Width = sqrt(Figure(abs(DeltaPt.x)).Square() + Figure(abs(DeltaPt.y)).Square());
 	double Rate = (BorderWidth - Width) / BorderWidth;
-	cout << BorderWidth - Width << "	" << Rate*100 << "%" << "	" << BorderWidth * Rate << endl;
+	//cout << BorderWidth - Width << "	" << Rate*100 << "%" << "	" << BorderWidth * Rate << endl;
 
 	DeltaVA = DeltaVA * BorderWidth * Rate;
 	//DeltaVA = DeltaVA * 5;

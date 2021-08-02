@@ -24,12 +24,12 @@ Point Point::operator -(Point& Pt) {
 }
 Point::operator POINT() {
 	POINT pt;
-	pt.x = x, pt.x = y;
+	pt.x = x, pt.y = y;
 	return pt;
 }
 Point::Point(const POINT& pt) {
 	x = pt.x;
-	y = pt.x;
+	y = pt.y;
 }
 
 Vector::Vector() { x = 0.0, y = 0.0; }
@@ -155,6 +155,15 @@ Rect::Rect(Point Pt, Vector Vec) : LT(Pt.x, Pt.y), RD(Vec.x, Vec.y) {
 		LT.y = Pt.y + Vec.y;
 		RD.y = Pt.y;
 	}
+}
+bool Rect::operator==(Point& Pt)
+{
+	if (Pt.x > LT.x && Pt.x < RD.x) {
+		if (Pt.y<LT.y && Pt.y>RD.y) {
+			return true;
+		}
+	}
+	return false;
 }
 bool Rect::operator||(Line& L)
 {

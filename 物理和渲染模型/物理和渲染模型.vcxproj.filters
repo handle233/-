@@ -54,6 +54,9 @@
     <ClCompile Include="MathSupport.cpp">
       <Filter>源文件\BasicModule</Filter>
     </ClCompile>
+    <ClCompile Include="ReferenceFrame.cpp">
+      <Filter>源文件\MainModules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonHead.h">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="MathSupport.h">
       <Filter>头文件\BasicModules</Filter>
+    </ClInclude>
+    <ClInclude Include="ReferenceFrame.h">
+      <Filter>头文件\MainModules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

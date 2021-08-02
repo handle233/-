@@ -238,6 +238,7 @@
     <ClCompile Include="MathSupport.cpp" />
     <ClCompile Include="Modules.cpp" />
     <ClCompile Include="Physics.cpp" />
+    <ClCompile Include="ReferenceFrame.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +251,7 @@
     <ClInclude Include="MathSupport.h" />
     <ClInclude Include="Modules.h" />
     <ClInclude Include="Physics.h" />
+    <ClInclude Include="ReferenceFrame.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
