@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\MainModules">
+      <UniqueIdentifier>{b9484f7d-8dde-4ba8-85fb-c8c75b572d71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\BasicModule">
+      <UniqueIdentifier>{c60449d2-7bb2-46d2-bfc6-8cd3f7ff0204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\MainModules">
+      <UniqueIdentifier>{5144f680-5ac9-4641-ba91-4f2721b9bf84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\BasicModules">
+      <UniqueIdentifier>{98e790b6-8f0f-433c-8af1-3c97edec09e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Container.cpp">
+      <Filter>源文件\BasicModule</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>源文件\BasicModule</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>源文件\MainModules</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics.cpp">
+      <Filter>源文件\MainModules</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>源文件\MainModules</Filter>
+    </ClCompile>
+    <ClCompile Include="MathSupport.cpp">
+      <Filter>源文件\BasicModule</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommonHead.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>头文件\MainModules</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.h">
+      <Filter>头文件\MainModules</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>头文件\MainModules</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>头文件\BasicModules</Filter>
+    </ClInclude>
+    <ClInclude Include="Container.h">
+      <Filter>头文件\BasicModules</Filter>
+    </ClInclude>
+    <ClInclude Include="MathSupport.h">
+      <Filter>头文件\BasicModules</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Log.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
