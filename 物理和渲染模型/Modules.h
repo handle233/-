@@ -26,18 +26,25 @@ public:
 
 class MainScreen :public Module {
 private:
+	bool Track;
 	Bitmap BG;
 
 	Physics PhyKernel;
 	List<Ball *> BallList;
 	ReferenceConvertor Frame;
 	Vector BallSize;
-	double BallMass = 1.0;
+	double BallMass = 0.5;
 	int nTick;
 	::Timer Updater;
 	::Timer Reactor;
 
 	Ball* ControlBall;
+	Ball* TrackBall;
+	Ball* LineBall;
+
+	FPSCounter FPS;
+	FPSCounter TPS;
+	FPSCounter ThS;
 public:
 	MainScreen();
 	~MainScreen();

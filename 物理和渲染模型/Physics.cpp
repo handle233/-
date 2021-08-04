@@ -12,6 +12,7 @@ Object::Object(Point& Pos, Vector& Size_, double Mass_) :pt(Pos), Mass(Mass_) {
 
 Physics::Physics(int TickNum) : Tick(TickNum)
 {
+	Pool = nullptr;
 	Obj = nullptr;
 	Objs = new List<Object*>;
 	printf("Call!\n");
@@ -48,6 +49,13 @@ bool Physics::ColliTendCheck(Object& a, Object& b)
 	return false;
 }
 
+void Physics::MultiThreadSupport(int ThreadNum)
+{
+	Pool = new ThreadPool(ThreadNum);
+	Pool->RegisterProc(1, ColliCallFunc);
+	Pool->RegisterProc(2, SpeedCallFunc);
+}
+
 void Physics::SetDebugScreen(Screen* Scr)
 {
 	Obj = new GraphObject(*Scr);
@@ -76,6 +84,21 @@ void Physics::Colli(Object& a, Object& b)
 	a.Speed = a.Speed + DeltaVA / a.Mass;
 	b.Speed = b.Speed - DeltaVA / b.Mass;
 }
+void Physics::Gravi(Object& a, Object& b)
+{
+	Point Pt = a.pt - b.pt;
+	Vector Vec(Pt.x, Pt.y);
+
+	Figure R = Vec.abs();
+	Vec = Vec / R;
+
+	const double G = 1000;
+	Vec = Vec * (G * a.Mass * b.Mass / (R / 3));
+	//cout << "Gravi:" << Vec.x << " " << Vec.y << endl;
+
+	a.Speed = a.Speed - Vec / a.Mass;
+	b.Speed = b.Speed + Vec / b.Mass;
+}
 /*
 * Vector V0 = a.Speed - b.Speed;
 	V0 = V0 * a.Mass;
@@ -101,15 +124,64 @@ bool Physics::AddObject(Object* pObj)
 	return true;
 }
 
+bool Physics::DelObject(Object* pObj)
+{
+	int Index = -1;
+	for (int a = 0; a < Objs->length; a++) {
+		if ((*Objs)[a] == pObj) {
+			Index = a;
+		}
+	}
+	if (Index == -1) {
+		return false;
+	}
+	else {
+		Objs->Del(Index);
+	}
+	return true;
+}
+
 void Physics::PhysicsSpin()
 {
 	for (int a = 0; a < Objs->length; a++) {
 		for (int b = a + 1; b < Objs->length; b++) {
-			Colli(*(*Objs)[a], *(*Objs)[b]);
+			if (Pool == nullptr) {
+				Colli(*(*Objs)[a], *(*Objs)[b]);
+			}
+			else {
+				ColliStr *ColStr = new ColliStr;
+				ColStr->It = this;
+				ColStr->a = (*Objs)[a];
+				ColStr->b = (*Objs)[b];
+				Pool->GiveProcess(1,ColStr);
+			}
 		}
 	}
-	for (int a = 0; a < Objs->length; a++) {
-		(*Objs)[a]->pt.x += (*Objs)[a]->Speed.x / Tick;
-		(*Objs)[a]->pt.y += (*Objs)[a]->Speed.y / Tick;
+
+	if (Pool != nullptr) {
+		while (Pool->GetMissionNum() > 0);
 	}
+	
+	for (int a = 0; a < Objs->length; a++) {
+		for (int b = a + 1; b < Objs->length; b++) {
+			Gravi(*(*Objs)[a], *(*Objs)[b]);
+		}
+	}
+
+	for (int a = 0; a < Objs->length; a++) {
+			(*Objs)[a]->pt.x += (*Objs)[a]->Speed.x / Tick;
+			(*Objs)[a]->pt.y += (*Objs)[a]->Speed.y / Tick;
+	}
+}
+
+void ColliCallFunc(void* pColliStr)
+{
+	Physics::ColliStr* ColStr = (Physics::ColliStr*)pColliStr;
+	//cout << "Checking  " << ColStr->a->pt.x << " " << ColStr->a->pt.y << endl;
+	ColStr->It->Colli(*ColStr->a, *ColStr->b);
+}
+
+void SpeedCallFunc(void* pColliStr)
+{
+
 }

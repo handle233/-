@@ -289,8 +289,8 @@ void Screen::ReFormatBitmap(::Bitmap& Picture, int NewWidth, int NewHeight)
 	HBITMAP hMem = CreateCompatibleBitmap(Memory.dc, NewWidth, NewHeight);
 	SelectObject(Memory.dc, hMem);
 
-	StretchBlt(Memory.dc, 0, 0, rect.right, rect.bottom,
-		Select.dc, 0, 0, Select.rect.right, Select.rect.bottom, SRCCOPY);
+	StretchBlt(Memory.dc, 0, 0, NewWidth, NewHeight,
+		Select.dc, 0, 0, Picture.OriginWidth, Picture.OriginHeight, SRCCOPY);
 	
 	DeleteObject(Picture.Photo);
 	Picture.Photo = hMem;
@@ -368,4 +368,104 @@ Bitmap::Bitmap(const TCHAR* sFile)
 Bitmap::~Bitmap()
 {
 	DeleteObject(Photo);
+}
+
+FPSCounter::FPSCounter() :TCounter(1000) {
+	LastFPS = 0;
+	FPS = 0;
+}
+int FPSCounter::UpdateFps() {
+	if (TCounter) {
+		LastFPS = FPS;
+		FPS = 0;
+	}
+	FPS++;
+	return LastFPS;
+}
+
+DWORD WINAPI ThreadPoolGlobalProc(PVOID pPool)
+{
+	ThreadPool* p_Pool = (ThreadPool*)pPool;
+	return p_Pool->ThreadPoolProc();
+}
+
+DWORD ThreadPool::ThreadPoolProc()
+{
+	while (!Quit) {
+		Sync.Lock();
+		if (Missions.length > 0) {
+			ProMission Mis = Missions[0];
+			Missions.Del(0);
+			Sync.Free();
+			//todo
+
+			int Index = -1;
+			for (int a = 0; a < ProList.length; a++) {
+				if (ProList[a].ProID == Mis.ProID) {
+					Index = a;
+				}
+			}
+			if (Index == -1) {
+				throw InvalidPro();
+				continue;
+			}
+			ProList[Index].Pro(Mis.pData);
+
+		}
+		else {
+			Sync.Free();
+		}
+	}
+	return 0;
+}
+
+ThreadPool::ThreadPool(int ThreadNum)
+{
+	Quit = false;
+	ThreadList = new HANDLE[ThreadNum];
+	for (int a = 0; a < ThreadNum; a++) {
+		ThreadList[a] = CreateThread(nullptr,0,ThreadPoolGlobalProc,this,
+			0,nullptr);
+	}
+	ThreadCounter = ThreadNum;
+}
+
+ThreadPool::~ThreadPool()
+{
+	Quit = true;
+	for (int a = 0; a < ThreadCounter; a++) {
+		WaitForSingleObject(ThreadList[a], INFINITE);
+	}
+}
+
+int ThreadPool::GetMissionNum()
+{
+	return Missions.length;
+}
+
+void ThreadPool::Suspend()
+{
+	for (int a = 0; a < ThreadCounter; a++) {
+		SuspendThread(ThreadList[a]);
+	}
+}
+void ThreadPool::Resume()
+{
+	for (int a = 0; a < ThreadCounter; a++) {
+		ResumeThread(ThreadList[a]);
+	}
+}
+void ThreadPool::RegisterProc(int ProID, void (*Pro)(void*))
+{
+	ProSel APro;
+	APro.ProID = ProID;
+	APro.Pro = Pro;
+	ProList.Add(-1,APro);
+}
+void ThreadPool::GiveProcess(int ProID, void* pData)
+{
+	ProMission AMis;
+	AMis.ProID = ProID;
+	AMis.pData = pData;
+	Missions.Add(-1, AMis);
 }

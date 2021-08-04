@@ -32,4 +32,20 @@
 
 using namespace std;
 
-
+class ThreadSync {
+private:
+	CRITICAL_SECTION Section;
+public:
+	ThreadSync() {
+		InitializeCriticalSection(&Section);
+	}
+	void Lock() {
+		EnterCriticalSection(&Section);
+	}
+	void Free() {
+		LeaveCriticalSection(&Section);
+	}
+	~ThreadSync() {
+		DeleteCriticalSection(&Section);
+	}
+};

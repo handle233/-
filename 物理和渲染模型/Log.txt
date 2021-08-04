@@ -1152,3 +1152,521 @@ At 10:54:26
 /Time: y21 m08 d03 00:58:44 
 /CopyRight handle 2021 
 *Record 
+*Init Log 
+/Time: y21 m08 d03 15:38:32 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 16:28:49 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 17:02:08 
+/CopyRight handle 2021 
+*Record 
+##ERROR: 放大比率为0，不是该值的常规范围
+At 17:02:57
+*Init Log 
+/Time: y21 m08 d03 17:04:10 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 18:30:50 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 18:36:53 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 18:37:45 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 18:56:32 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 18:57:04 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 19:07:05 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 19:39:48 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 19:45:01 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 19:53:24 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 19:55:26 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 19:55:50 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 19:56:03 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 19:56:50 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 19:58:27 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 21:34:05 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 21:52:01 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 21:53:07 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 21:55:57 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 21:56:25 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 21:58:57 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 21:59:40 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:02:13 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:33:52 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:34:02 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:36:21 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:39:14 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:40:44 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:40:51 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:40:58 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:45:45 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:46:16 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:46:29 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:47:31 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:47:46 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:51:46 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:52:26 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:52:39 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:55:21 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:57:57 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 22:58:17 
+/CopyRight handle 2021 
+*Record 
+##ERROR: 找不到ID对应的过程
+At 23:01:50
+##ERROR: 找不到ID对应的过程
+At 23:02:22
+*Init Log 
+/Time: y21 m08 d03 23:07:11 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:09:20 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:10:53 
+/CopyRight handle 2021 
+*Record 
+##ERROR: 找不到ID对应的过程
+At 23:11:07
+##ERROR: 找不到ID对应的过程
+At 23:11:45
+*Init Log 
+/Time: y21 m08 d03 23:18:55 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:21:09 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:22:16 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:23:04 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:23:16 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:23:38 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:25:23 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:26:12 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:26:36 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:27:33 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:28:04 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:28:24 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:29:52 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:31:30 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:31:48 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:32:44 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:33:25 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:34:07 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:34:48 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:35:13 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:36:22 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:36:45 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:37:03 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:37:10 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:37:31 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:37:52 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:41:11 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:43:37 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:43:44 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:44:58 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d03 23:46:01 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:09:36 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:14:08 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:14:30 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:15:21 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:15:57 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:16:12 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:19:55 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:20:27 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:21:20 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:21:39 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:22:05 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:24:25 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:26:22 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:26:31 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:31:35 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:32:45 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:32:51 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 00:33:56 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 09:59:58 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:19:19 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:20:05 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:20:26 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:23:57 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:24:31 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:29:01 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:40:02 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:47:33 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:54:29 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:55:43 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:56:33 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:57:53 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 10:58:50 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:00:34 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:02:01 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:09:26 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:10:27 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:12:59 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:13:56 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:14:29 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:18:25 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:18:54 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:19:19 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:19:33 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:20:17 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:20:26 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:25:28 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:26:04 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:28:52 
+/CopyRight handle 2021 
+*Record 
+*Init Log 
+/Time: y21 m08 d04 11:37:14 
+/CopyRight handle 2021 
+*Record 

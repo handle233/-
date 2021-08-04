@@ -112,6 +112,7 @@ public:
 
 	Point operator +(Point& Pt);
 	Point operator -(Point& Pt);
+	Point operator *(Figure Num);
 
 	//Windows support
 	operator POINT();

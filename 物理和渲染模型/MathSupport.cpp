@@ -22,6 +22,11 @@ Point Point::operator -(Point& Pt) {
 	Point a(x - Pt.x, y - Pt.y);
 	return a;
 }
+Point Point::operator*(Figure Num)
+{
+	Point a(x * Num, y * Num);
+	return a;
+}
 Point::operator POINT() {
 	POINT pt;
 	pt.x = x, pt.y = y;

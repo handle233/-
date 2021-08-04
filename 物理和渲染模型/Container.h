@@ -18,7 +18,9 @@ public:
 
 template<typename Type>
 class List {
+	friend class Node;
 private:
+	SRWLOCK Lock;
 	class Node{
 	private:
 		Type* Data;
@@ -119,6 +121,7 @@ private:
 public:
 	const int& length = Length;
 	List() {
+		InitializeSRWLock(&Lock);
 		Root = nullptr;
 		Length = 0;
 		CacheIndex = 0;
@@ -126,11 +129,17 @@ public:
 	}
 	bool Add(int Index, const Type& Data);
 	Type& operator[](int Index) {
+		AcquireSRWLockShared(&Lock);
 		IndexLegal(Index);
 		Node* Cur = ToThatNode(Index);
+		if (Cur == nullptr) {
+			cout << "Bug À´À²£¡£¡" << endl;
+		}
+		ReleaseSRWLockShared(&Lock);
 		return *Cur;
 	}
 	void Del(int Index) {
+		AcquireSRWLockExclusive(&Lock);
 		Node* Cur = ToThatNode(Index);
 		if (Index == 0) {
 			Root = *Cur + 1;
@@ -140,6 +149,7 @@ public:
 				CacheNode = nullptr;
 			}
 			Length--;
+			ReleaseSRWLockExclusive(&Lock);
 			return;
 		}
 		if (CacheIndex == Index) {
@@ -148,6 +158,7 @@ public:
 		}
 		delete Cur;
 		Length--;
+		ReleaseSRWLockExclusive(&Lock);
 	}
 	void operator delete(void* p) {
 		List* pL = (List*)p;
@@ -174,6 +185,7 @@ public:
 template<typename Type>
 inline bool List<Type>::Add(int Index, const Type& Data)
 {
+	AcquireSRWLockExclusive(&Lock);
 	if (Index != -1) {
 		IndexLegal(Index);
 	}
@@ -183,9 +195,9 @@ inline bool List<Type>::Add(int Index, const Type& Data)
 		*New << nullptr;
 		Root==nullptr?0:*Root << New;
 		Root = New;
-
 		CacheIndex++;
 		Length++;
+		ReleaseSRWLockExclusive(&Lock);
 		return true;
 	}
 	Node* Ins = ToThatNode(Index);
@@ -199,5 +211,6 @@ inline bool List<Type>::Add(int Index, const Type& Data)
 	}
 
 	Length++;
+	ReleaseSRWLockExclusive(&Lock);
 	return true;
 }

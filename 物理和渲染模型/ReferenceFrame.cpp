@@ -19,8 +19,11 @@ ReferenceConvertor::ReferenceConvertor()
 
 Point ReferenceConvertor::Convert(Point Pt)
 {
-	Pt.x = (Pt.x + OriginOffset.x) * SourceDirX * DestinDirX * Magnif;
-	Pt.y = (Pt.y + OriginOffset.y) * SourceDirY * DestinDirY * Magnif;
+	if (Magnif <= 0) {
+		throw Exception(EXPT_ERROR, "放大比率为0，不是该值的常规范围");
+	}
+	Pt.x = (Pt.x * Magnif + OriginOffset.x) * SourceDirX * DestinDirX;
+	Pt.y = (Pt.y * Magnif + OriginOffset.y) * SourceDirY * DestinDirY;
 	return Pt;
 }
 
@@ -29,8 +32,8 @@ Point ReferenceConvertor::Disconvert(Point Pt)
 	if (Magnif <= 0) {
 		throw Exception(EXPT_ERROR, "放大比率为0，不是该值的常规范围");
 	}
-	Pt.x = (Pt.x * SourceDirX * DestinDirX / Magnif) - OriginOffset.x;
-	Pt.y = (Pt.y * SourceDirY * DestinDirY / Magnif) - OriginOffset.y;
+	Pt.x = (Pt.x * SourceDirX * DestinDirX - OriginOffset.x) / Magnif;
+	Pt.y = (Pt.y * SourceDirY * DestinDirY - OriginOffset.y) / Magnif;
 	return Pt;
 }
 

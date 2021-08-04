@@ -11,19 +11,41 @@
 #include "Window.h"
 
 class Object;
+
+void ColliCallFunc(void* pColliStr);
+void SpeedCallFunc(void* pColliStr);
+
 class Physics {
+	friend void ColliCallFunc(void* pColliStr);
+	friend void SpeedCallFunc(void* pColliStr);
 private:
 	GraphObject *Obj;
 	int Tick;
 	List<Object*> *Objs;
 	bool ColliTendCheck(Object& a, Object& b);
+
+	ThreadPool *Pool;
+	struct ColliStr {
+		Physics* It;
+		Object* a;
+		Object* b;
+	};
+	struct SpeedStr {
+		Physics* It;
+		Object* a;
+		Object* b;
+	};
+
 public:
+	void MultiThreadSupport(int ThreadNum);
 	void SetDebugScreen(Screen* Scr);
 	void Colli(Object& a, Object& b);
+	void Gravi(Object& a, Object& b);
 	const int& TickSpeed = Tick;
 	Physics(int TickNum);
 	void SetTickSpeed(int TickS) { Tick = TickS; }
 	bool AddObject(Object* pObj);
+	bool DelObject(Object* pObj);
 	void PhysicsSpin();
 };
 

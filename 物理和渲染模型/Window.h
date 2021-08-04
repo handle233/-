@@ -154,20 +154,50 @@ public:
 		return false;
 	}
 };
-class ThreadSync {
+
+
+class FPSCounter {
 private:
-	CRITICAL_SECTION Section;
+	Timer TCounter;
+	int FPS;
 public:
-	ThreadSync() {
-		InitializeCriticalSection(&Section);
+	int LastFPS;
+	FPSCounter();
+	int UpdateFps();
+};
+
+class InvalidPro :public Exception {
+public:
+	InvalidPro() :Exception(EXPT_ERROR, "找不到ID对应的过程") {
+
 	}
-	void Lock() {
-		EnterCriticalSection(&Section);
-	}
-	void Free() {
-		LeaveCriticalSection(&Section);
-	}
-	~ThreadSync() {
-		DeleteCriticalSection(&Section);
-	}
+};
+
+DWORD WINAPI ThreadPoolGlobalProc(PVOID pPool);
+class ThreadPool {
+	friend DWORD WINAPI ThreadPoolGlobalProc(PVOID pPool);
+private:
+	DWORD ThreadPoolProc();
+	struct ProSel{
+		int ProID;
+		void (*Pro)(void*);
+	};
+	struct ProMission {
+		int ProID;
+		void *pData;
+	};
+	ThreadSync Sync;
+	List<ProSel> ProList;
+	List<ProMission> Missions;
+	HANDLE* ThreadList;
+	int ThreadCounter;
+	bool Quit;
+public:
+	ThreadPool(int ThreadNum);
+	~ThreadPool();
+	int GetMissionNum();
+	void Suspend();
+	void Resume();
+	void RegisterProc(int ProID, void (*Pro)(void*));
+	void GiveProcess(int ProID, void* pData);
 };
